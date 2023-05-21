@@ -13,7 +13,7 @@ resource "google_compute_instance" "theinfotechstuffs_instance" {
   }
 
   network_interface {
-    network       = google_compute_network.my_network.id
+    network       = google_compute_network.theinfotechstuffs_network.id
     subnetwork    = google_compute_subnetwork.theinfotechstuffs_subnet.name
   }
 
