@@ -19,7 +19,7 @@ resource "google_compute_instance" "theinfotechstuffs_instance" {
       nat_ip = google_compute_address.theinfotechstuffs_public_ip.address
     }
   }
-
+  tags = ["http-server", "https-server"]
   metadata_startup_script = <<-EOF
     #!/bin/bash
     apt-get update
