@@ -15,6 +15,9 @@ resource "google_compute_instance" "theinfotechstuffs_instance" {
   network_interface {
     network       = google_compute_network.theinfotechstuffs_network.id
     subnetwork    = google_compute_subnetwork.theinfotechstuffs_subnet.name
+    access_config {
+      nat_ip = google_compute_address.theinfotechstuffs_public_ip.address
+    }
   }
 
   metadata_startup_script = <<-EOF
