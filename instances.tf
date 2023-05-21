@@ -19,7 +19,10 @@ resource "google_compute_instance" "theinfotechstuffs_instance" {
 
   metadata_startup_script = <<-EOF
     #!/bin/bash
-    # Add your startup script commands here
+    apt-get update
+    apt-get install -y apache2
+    systemctl enable apache2
+    systemctl start apache2
   EOF
 }
 
